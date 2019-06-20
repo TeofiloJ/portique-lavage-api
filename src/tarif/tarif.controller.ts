@@ -26,7 +26,7 @@ export class TarifController {
     }
 
 	@Delete('tarifID')
-	async delete(@Param('taifID') tarifID) {
+	async delete(@Param('tarifID') tarifID) {
 	const tarif = await this.tarifService.delete(tarifID);
 	return tarif;
 	}
