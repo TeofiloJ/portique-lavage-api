@@ -19,14 +19,19 @@ export class UserService {
         return await this.userModel.find().exec();
     }
 
+    async findByID(ID): Promise<User[]> {
+        const user = await this.userModel.find({ UserID : ID} );
+        return user;
+    }
+
     async update(UserID, createUserDTO: CreateUserDto): Promise<User> {
         const updatedUser =  this.userModel
             .findByIdAndUpdate(UserID, CreateUserDto, { new: true });
         return await updatedUser;
     }
 
-    async delete(userID): Promise<any> {
-        const deletedUser = await this.userModel.findByIdAndRemove(userID);
+    async delete(ID): Promise<any> {
+        const deletedUser = await this.userModel.remove({ userID : ID });
         return deletedUser;
     }
 }
