@@ -5,3 +5,4 @@ export const TARIF_MODEL_PROVIDER = 'TarifModelToken';
 export const OFFRE_MODEL_PROVIDER = 'TarifModelToken';
 export const PROMOTION_MODEL_PROVIDER = 'PromotionModelToken';
 export const LOG_MODEL_PROVIDER = 'PromotionModelToken';
+export const ROLE_MODEL_PROVIDER = 'PromotionModelToken';
