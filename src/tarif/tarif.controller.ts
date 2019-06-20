@@ -2,8 +2,10 @@ import { Controller, Get, Param, Post, Body, Query, Delete } from '@nestjs/commo
 import { CreateTarifDto } from './dto/create-tarif.dto';
 import { TarifService } from './tarif.service';
 import { Tarif as TarifInterface } from './interfaces/tarif.interface';
+import { ApiUseTags, ApiResponse } from '@nestjs/swagger';
 
-@Controller('tarif')
+@Controller('tarifs')
+@ApiUseTags('Tarifs')
 export class TarifController {
     constructor(private readonly tarifService: TarifService) { }
 
@@ -17,10 +19,10 @@ export class TarifController {
         return this.tarifService.findAll();
     }
 
-    @Get(':userID')
-    async getUser(@Param('userID') userID) {
-         const user = await this.userService.getUser(userID);
-         return user;
+    @Get(':tarifID')
+    async find(@Param('tarifID') ID) {
+         const tarif = await this.tarifService.findByID(ID);
+         return tarif;
     }
 
 	@Delete('tarifID')

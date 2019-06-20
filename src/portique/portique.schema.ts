@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
-export const UserSchema = new mongoose.Schema({
-    PortiqueID: Number,
+export const PortiqueSchema = new mongoose.Schema({
+    ID: Number,
     name: String,
     type: String,
     location: String,

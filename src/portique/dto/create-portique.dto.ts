@@ -2,7 +2,7 @@ import { ApiModelProperty } from '@nestjs/swagger';
 
 export class CreatePortiqueDto {
     @ApiModelProperty()
-    readonly PortiqueID: number
+    readonly ID: number
     @ApiModelProperty()
     readonly name: String
     @ApiModelProperty()

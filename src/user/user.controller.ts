@@ -18,7 +18,7 @@ export class UserController {
     }
 
     @Get(':userID')
-    async find(@Param('userID') userID) {
+    async find(@Param('userID') userID): Promise<UserInterface> {
         const user = await this.userService.findByID(userID);
         return user;
     }
