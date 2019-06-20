@@ -1,31 +1,31 @@
 import { Controller, Get, Param, Post, Body, Query, Delete  } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UserService } from './user.service';
-import { User as UserInterface } from './interfaces/user.interface';
+import { CreatePortiqueDto } from './dto/create-portique.dto';
+import { PortiqueService } from './portique.service';
+import { Portique as PortiqueInterface } from './interfaces/portique.interface';
 
-@Controller('users')
-export class UserController {
-    constructor(private readonly userService: UserService) { }
+@Controller('portique')
+export class PortiqueController {
+    constructor(private readonly userService: PortiqueService) { }
 
     @Post()
-    async create(@Body() CreateUserDto: CreateUserDto) {
-        this.userService.create(CreateUserDto);
+    async create(@Body() CreatePortiqueDto: CreatePortiqueDto) {
+        this.portiqueService.create(CreatePortiqueDto);
     }
 
     @Get()
-    async findAll(): Promise<UserInterface[]> {
-        return this.userService.findAll();
+    async findAll(): Promise<PortiqueInterface[]> {
+        return this.portiqueService.findAll();
     }
 
-    @Get(':userID')
-    async find(@Param('userID') userID) {
-        const user = await this.userService.findByID(userID);
-        return user;
+    @Get(':portiqueID')
+    async find(@Param('portiqueID') portiqueID) {
+        const portique = await this.portiqueService.findByID(portiqueID);
+        return portique;
     }
 
-    @Delete(':userID')
-    async delete(@Param('userID') userID) {
-        const user = await this.userService.delete(userID);
-        return user;
+    @Delete(':portiqueID')
+    async delete(@Param('portiqueID') portiqueID) {
+        const portique = await this.portiqueService.delete(portiqueID);
+        return portique;
     }
 }

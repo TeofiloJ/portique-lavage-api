@@ -1,9 +1,9 @@
 import { Document } from 'mongoose';
 
-export interface User extends Document {
-    readonly UserID: String
-    readonly firstname: String
+export interface Portique extends Document {
+    readonly PortiqueID: number
     readonly name: String
-    readonly phone: String
-    readonly created_at: Date
+    readonly type: String
+    readonly location: String
+    readonly status: boolean
 }
