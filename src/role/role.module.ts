@@ -10,4 +10,4 @@ import { DatabaseModule } from '../database/database.module';
   providers: [RoleService, ...RoleProviders]
 })
 
-export class RoleserviceModule {}
+export class RoleModule {}

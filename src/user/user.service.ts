@@ -9,7 +9,7 @@ import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class UserService extends Service<Model<User>, CreateUserDto, User> {
-    constructor(@InjectModel('User') private readonly userModel: Model<User>) {
+    constructor(@Inject(USER_MODEL_PROVIDER) private readonly userModel: Model<User>) {
             super(userModel)
     }
 
