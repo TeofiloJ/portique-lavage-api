@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body, Query, Delete, UseGuards  } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Query, Delete, UseGuards, Put  } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserService } from './user.service';
 import { User as UserInterface } from './interfaces/user.interface';
@@ -11,12 +11,11 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Post()
-    async create(@Body() CreateUserDto: CreateUserDto) {
-        this.userService.create(CreateUserDto);
+    async create(@Body() createUserDto: CreateUserDto) {
+        this.userService.create(createUserDto);
     }
 
     @Get()
-    @UseGuards(AuthGuard('bearer'))
     async findAll(): Promise<UserInterface[]> {
         return this.userService.findAll();
     }
@@ -33,4 +32,11 @@ export class UserController {
         const user = await this.userService.delete(userID);
         return user;
     }
+
+    @Put(':userID')
+    async update(@Param('id') id, @Body() userData: UserInterface): Promise<any> {
+        userData.id = Number(id);
+        return this.userService.update(userData, userData);
+    }  
+
 }
