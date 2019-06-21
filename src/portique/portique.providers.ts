@@ -1,5 +1,4 @@
-import { Connection } from 'mongoose';
-
+import { Connection, Document, Model } from 'mongoose';
 import { PortiqueSchema } from './portique.schema';
 import { PORTIQUE_MODEL_PROVIDER, DB_PROVIDER } from '../constants';
 

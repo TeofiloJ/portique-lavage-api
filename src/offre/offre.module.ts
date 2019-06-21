@@ -10,4 +10,4 @@ import { DatabaseModule } from '../database/database.module';
   providers: [OffreService, ...OffreProviders]
 })
 
-export class OffreserviceModule {}
+export class OffreModule {}

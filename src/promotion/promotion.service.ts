@@ -7,7 +7,7 @@ import { PROMOTION_MODEL_PROVIDER } from '../constants';
 import { Service } from '../service'
 
 @Injectable()
-export class PromotionService extends Service<Model<Promotion>,CreatePromotionDto>{
+export class PromotionService extends Service<Model<Promotion>,CreatePromotionDto, Promotion>{
     constructor(
         @Inject(PROMOTION_MODEL_PROVIDER) private readonly promotionModel: Model<Promotion>) {
             super(promotionModel)

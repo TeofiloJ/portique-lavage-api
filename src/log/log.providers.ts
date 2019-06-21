@@ -1,4 +1,4 @@
-import { Connection } from 'mongoose';
+import { Connection, Document, Model } from 'mongoose';
 
 import { LogSchema } from './log.schema';
 import { LOG_MODEL_PROVIDER, DB_PROVIDER } from '../constants';

@@ -7,7 +7,7 @@ import { PORTIQUE_MODEL_PROVIDER } from '../constants';
 import { Service } from '../service'
 
 @Injectable()
-export class PortiqueService extends Service<Model<Portique>, CreatePortiqueDto> {
+export class PortiqueService extends Service<Model<Portique>, CreatePortiqueDto, Portique> {
     constructor(
         @Inject(PORTIQUE_MODEL_PROVIDER) private readonly portiqueModel: Model<Portique>) {
             super(portiqueModel)

@@ -7,7 +7,7 @@ import { TARIF_MODEL_PROVIDER } from '../constants';
 import { Service } from '../service'
 
 @Injectable()
-export class TarifService extends Service<Model<Tarif>,CreateTarifDto>{
+export class TarifService extends Service<Model<Tarif>,CreateTarifDto, Tarif>{
     constructor(
         @Inject(TARIF_MODEL_PROVIDER) private readonly tarifModel: Model<Tarif>) {
             super(tarifModel)

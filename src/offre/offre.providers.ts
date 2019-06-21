@@ -1,5 +1,4 @@
-import { Connection } from 'mongoose';
-
+import { Connection, Document, Model } from 'mongoose';
 import { OffreSchema } from './offre.schema';
 import { OFFRE_MODEL_PROVIDER, DB_PROVIDER } from '../constants';
 

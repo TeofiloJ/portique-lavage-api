@@ -1,4 +1,4 @@
-import { Connection } from 'mongoose';
+import { Connection, Document, Model } from 'mongoose';
 
 import { PromotionSchema } from './promotion.schema';
 import { PROMOTION_MODEL_PROVIDER, DB_PROVIDER } from '../constants';

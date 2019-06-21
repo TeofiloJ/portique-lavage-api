@@ -10,4 +10,4 @@ import { DatabaseModule } from '../database/database.module';
   providers: [LogService, ...LogProviders]
 })
 
-export class LogserviceModule {}
+export class LogModule {}
