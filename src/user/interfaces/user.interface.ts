@@ -7,4 +7,5 @@ export interface User extends Document  {
     readonly email: string
     readonly created_at: Date
     readonly password : string
+    readonly token : string
 }

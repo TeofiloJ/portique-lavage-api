@@ -28,6 +28,7 @@ export class UserController {
     }
 
     @Delete(':userID')
+    @UseGuards(AuthGuard('bearer'))
     async delete(@Param('userID') userID) {
         const user = await this.userService.delete(userID);
         return user;
