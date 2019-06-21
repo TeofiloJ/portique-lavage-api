@@ -1,8 +1,9 @@
-import { Controller, Get, Param, Post, Body, Query, Delete  } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Query, Delete, UseGuards  } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserService } from './user.service';
 import { User as UserInterface } from './interfaces/user.interface';
 import { ApiUseTags, ApiResponse } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('users')
 @ApiUseTags('Users')
@@ -15,6 +16,7 @@ export class UserController {
     }
 
     @Get()
+    @UseGuards(AuthGuard('bearer'))
     async findAll(): Promise<UserInterface[]> {
         return this.userService.findAll();
     }

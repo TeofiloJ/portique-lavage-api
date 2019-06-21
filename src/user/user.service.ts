@@ -18,4 +18,9 @@ export class UserService extends Service<Model<User>, CreateUserDto, User> {
         return user;
     }
 
+    async findByToken(entityToken): Promise<User> {
+        const user = await this.userModel.findOne({ token : entityToken} );
+        return user;
+    }
+
 }
